@@ -1,0 +1,106 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vendor {
+  id          String    @id @default(uuid())
+  name        String
+  partyNumber String?
+  address     String?
+  taxId       String?
+  createdAt   DateTime  @default(now())
+  invoices    Invoice[]
+
+  @@map("Vendor")
+}
+
+model Customer {
+  id        String    @id @default(uuid())
+  name      String?
+  address   String?
+  taxId     String?
+  createdAt DateTime  @default(now())
+  invoices  Invoice[]
+
+  @@map("Customer")
+}
+
+model Document {
+  id          String    @id @default(uuid())
+  analyticsId String?
+  fileName    String?
+  filePath    String?
+  fileSize    BigInt?
+  fileType    String?
+  status      String?
+  metadata    Json?
+  rawJson     Json?
+  processedAt DateTime?
+  createdAt   DateTime  @default(now())
+  invoice     Invoice?  @relation("DocumentInvoice")
+
+  @@map("Document")
+}
+
+model Invoice {
+  id                  String            @id @default(uuid())
+  analyticsDocumentId String?           @unique
+  invoiceIdText       String?
+  invoiceDate         DateTime?
+  deliveryDate        DateTime?
+  subtotal            Float?
+  totalTax            Float?
+  invoiceTotal        Float?
+  currency            String?
+  documentType        String?
+  vendorId            String?
+  customerId          String?
+  createdAt           DateTime          @default(now())
+  analyticsDocument   Document?         @relation("DocumentInvoice", fields: [analyticsDocumentId], references: [id])
+  customer            Customer?         @relation(fields: [customerId], references: [id])
+  vendor              Vendor?           @relation(fields: [vendorId], references: [id])
+  lineItems           InvoiceLineItem[]
+  payment             Payment?
+
+  @@map("Invoice")
+}
+
+model InvoiceLineItem {
+  id           String  @id @default(uuid())
+  invoiceId    String
+  srNo         Int?
+  description  String?
+  quantity     Float?
+  unitPrice    Float?
+  totalPrice   Float?
+  sachkonto    String?
+  buschluessel String?
+  vatRate      Float?
+  vatAmount    Float?
+  invoice      Invoice @relation(fields: [invoiceId], references: [id])
+
+  @@map("InvoiceLineItem")
+}
+
+model Payment {
+  id                 String    @id @default(uuid())
+  invoiceId          String    @unique
+  dueDate            DateTime?
+  paymentTerms       String?
+  bankAccount        String?
+  bic                String?
+  accountName        String?
+  netDays            Int?
+  discountPercentage Float?
+  discountDays       Int?
+  discountedTotal    Float?
+  createdAt          DateTime  @default(now())
+  invoice            Invoice   @relation(fields: [invoiceId], references: [id])
+
+  @@map("Payment")
+}

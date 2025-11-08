@@ -1,0 +1,9 @@
+node_modules
+.env
+.env.local
+.vscode
+dist
+coverage
+.DS_Store
+/data/*.json
+.vercel

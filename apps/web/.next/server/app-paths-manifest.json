@@ -1,0 +1,5 @@
+{
+  "/dashboard/page": "app/dashboard/page.js",
+  "/not-found": "app/not-found.js",
+  "/chat-with-data/page": "app/chat-with-data/page.js"
+}
